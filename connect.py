@@ -38,7 +38,7 @@ node.listen(5678)
 loop = asyncio.get_event_loop()
 
 #localhost
-loop.run_until_complete(node.bootstrap([("0000.0000.0000.0000", 8468)]))
+loop.run_until_complete(node.bootstrap([("0.0.0.0", 8468)]))
 
 name_request()
 
@@ -61,7 +61,8 @@ while 1:
         print ("You chose" + mate) 
 
         #open new termainal for chat
-        os.system("python communication" + name + mate)
+        os.system("python3 input.py " + name + " " + mate)
+        os.system("python3 overview.py " +  name + " " +  mate)
 
     else:
         print("not a user")

@@ -21,7 +21,7 @@ def get(node, port, key):
 
     server = Server()
     server.listen(8469)
-    bootstrap_node = (node, int(port))
+    bootstrap_node = (str(node), port}
     loop.run_until_complete(server.bootstrap([bootstrap_node]))
     result = loop.run_until_complete(server.get(key))
     server.stop()
@@ -45,7 +45,7 @@ def send(node, port, key, value):
 
     server = Server()
     server.listen(8469)
-    bootstrap_node = (node, int(port))
+    bootstrap_node = (str(node), int(port))
     loop.run_until_complete(server.bootstrap([bootstrap_node]))
     loop.run_until_complete(server.set(key, value))
     server.stop()
